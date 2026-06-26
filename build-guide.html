@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Naomi • PC Build Guide</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        .mermaid { background: #18181b; padding: 20px; border-radius: 12px; }
+        .step-card { transition: all 0.2s; }
+        .step-card:hover { transform: translateY(-2px); }
+    </style>
+</head>
+<body class="bg-zinc-950 text-zinc-200">
+    <div class="max-w-5xl mx-auto px-6 py-10">
+        
+        <!-- Header -->
+        <div class="flex items-center justify-between mb-10">
+            <div>
+                <h1 class="text-4xl font-bold">Naomi • Build Guide</h1>
+                <p class="text-zinc-400 mt-1">High-level assembly flow for your PC</p>
+            </div>
+            <a href="index.html" class="px-4 py-2 bg-zinc-900 hover:bg-zinc-800 rounded-xl text-sm flex items-center gap-x-2">
+                <i class="fa-solid fa-arrow-left"></i>
+                <span>Back to Flashcards</span>
+            </a>
+        </div>
+
+        <!-- Overview -->
+        <div class="bg-zinc-900 border border-zinc-800 rounded-3xl p-8 mb-10">
+            <h2 class="text-2xl font-semibold mb-4">Your Build Overview</h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm">
+                <div><span class="text-zinc-400">Case:</span> <span class="font-medium">Fractal Pop 2 Vision</span></div>
+                <div><span class="text-zinc-400">CPU:</span> <span class="font-medium">Ryzen 7 9800X3D</span></div>
+                <div><span class="text-zinc-400">Cooler:</span> <span class="font-medium">Arctic LF III Pro 280</span></div>
+                <div><span class="text-zinc-400">Motherboard:</span> <span class="font-medium">MSI B850I Edge TI WiFi</span></div>
+                <div><span class="text-zinc-400">RAM:</span> <span class="font-medium">32GB DDR5-6000</span></div>
+                <div><span class="text-zinc-400">GPU:</span> <span class="font-medium">MSI RTX 5080 Gaming Trio</span></div>
+                <div><span class="text-zinc-400">PSU:</span> <span class="font-medium">Corsair RM1000x</span></div>
+                <div><span class="text-zinc-400">Storage:</span> <span class="font-medium">Samsung 9100 PRO 2TB</span></div>
+            </div>
+        </div>
+
+        <!-- High-Level Flow -->
+        <h2 class="text-2xl font-semibold mb-6">Recommended Build Order</h2>
+        
+        <div class="mermaid mb-10">
+            flowchart TD
+                A[1. Preparation] --> B[2. Install CPU on Motherboard]
+                B --> C[3. Install RAM]
+                C --> D[4. Install CPU Cooler]
+                D --> E[5. Install Motherboard into Case]
+                E --> F[6. Install GPU]
+                F --> G[7. Install Storage]
+                G --> H[8. Connect Power Cables]
+                H --> I[9. Connect Front Panel & AIO]
+                I --> J[10. Cable Management]
+                J --> K[11. Final Checks]
+                K --> L[12. First Boot & BIOS]
+        </div>
+
+        <!-- Detailed Steps -->
+        <div class="space-y-6">
+            
+            <!-- Step 1 -->
+            <div class="step-card bg-zinc-900 border border-zinc-800 rounded-3xl p-7">
+                <div class="flex items-center gap-x-4 mb-4">
+                    <div class="w-9 h-9 bg-blue-500/10 text-blue-400 rounded-2xl flex items-center justify-center font-bold">1</div>
+                    <h3 class="text-xl font-semibold">Preparation</h3>
+                </div>
+                <ul class="space-y-2 text-sm text-zinc-300">
+                    <li>• Clear a large, clean workspace with good lighting</li>
+                    <li>• Have your tools ready (screwdriver, zip ties, etc.)</li>
+                    <li>• Plug in your PSU but leave it switched OFF</li>
+                    <li>• Touch the metal part of the PSU regularly to ground yourself</li>
+                    <li>• Keep components in their anti-static bags until needed</li>
+                </ul>
+            </div>
+
+            <!-- Step 2-4 -->
+            <div class="step-card bg-zinc-900 border border-zinc-800 rounded-3xl p-7">
+                <div class="flex items-center gap-x-4 mb-4">
+                    <div class="w-9 h-9 bg-emerald-500/10 text-emerald-400 rounded-2xl flex items-center justify-center font-bold">2-4</div>
+                    <h3 class="text-xl font-semibold">Motherboard Assembly (Outside Case)</h3>
+                </div>
+                <div class="grid md:grid-cols-3 gap-6 text-sm">
+                    <div>
+                        <div class="font-medium mb-2 text-emerald-400">Step 2: Install CPU</div>
+                        <ul class="space-y-1 text-zinc-300">
+                            <li>• Open CPU socket lever</li>
+                            <li>• Align triangle on CPU with socket</li>
+                            <li>• Gently drop CPU in (no force)</li>
+                            <li>• Close lever</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <div class="font-medium mb-2 text-emerald-400">Step 3: Install RAM</div>
+                        <ul class="space-y-1 text-zinc-300">
+                            <li>• Open RAM slots</li>
+                            <li>• Align notch on RAM with slot</li>
+                            <li>• Push down firmly until it clicks</li>
+                            <li>• Do both sticks</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <div class="font-medium mb-2 text-emerald-400">Step 4: Install Cooler</div>
+                        <ul class="space-y-1 text-zinc-300">
+                            <li>• Apply thermal paste (if needed)</li>
+                            <li>• Mount the 280mm AIO</li>
+                            <li>• Connect pump power to AIO_PUMP header</li>
+                            <li>• Connect radiator fans</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step 5 -->
+            <div class="step-card bg-zinc-900 border border-zinc-800 rounded-3xl p-7">
+                <div class="flex items-center gap-x-4 mb-4">
+                    <div class="w-9 h-9 bg-purple-500/10 text-purple-400 rounded-2xl flex items-center justify-center font-bold">5</div>
+                    <h3 class="text-xl font-semibold">Install Motherboard into Case</h3>
+                </div>
+                <ul class="space-y-2 text-sm text-zinc-300">
+                    <li>• Install I/O shield into the case (if not pre-installed)</li>
+                    <li>• Place motherboard onto standoffs</li>
+                    <li>• Screw it down (don't overtighten)</li>
+                    <li>• Connect 24-pin power and 8-pin CPU power</li>
+                </ul>
+            </div>
+
+            <!-- Step 6-7 -->
+            <div class="step-card bg-zinc-900 border border-zinc-800 rounded-3xl p-7">
+                <div class="flex items-center gap-x-4 mb-4">
+                    <div class="w-9 h-9 bg-orange-500/10 text-orange-400 rounded-2xl flex items-center justify-center font-bold">6-7</div>
+                    <h3 class="text-xl font-semibold">Install GPU & Storage</h3>
+                </div>
+                <div class="grid md:grid-cols-2 gap-6 text-sm">
+                    <div>
+                        <div class="font-medium mb-2">Install GPU</div>
+                        <ul class="space-y-1 text-zinc-300">
+                            <li>• Remove PCIe slot covers</li>
+                            <li>• Insert RTX 5080 firmly</li>
+                            <li>• Screw it down</li>
+                            <li>• Connect power cables (use native 12V-2x6 if possible)</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <div class="font-medium mb-2">Install Storage</div>
+                        <ul class="space-y-1 text-zinc-300">
+                            <li>• Install Samsung 9100 PRO in M.2 slot</li>
+                            <li>• Screw it down</li>
+                            <li>• Use the included heatsink if available</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step 8-10 -->
+            <div class="step-card bg-zinc-900 border border-zinc-800 rounded-3xl p-7">
+                <div class="flex items-center gap-x-4 mb-4">
+                    <div class="w-9 h-9 bg-rose-500/10 text-rose-400 rounded-2xl flex items-center justify-center font-bold">8-10</div>
+                    <h3 class="text-xl font-semibold">Cables & Final Steps</h3>
+                </div>
+                <ul class="space-y-2 text-sm text-zinc-300">
+                    <li>• Connect all power cables (24-pin, CPU 8-pin, GPU power)</li>
+                    <li>• Connect front panel connectors (Power SW, Reset, LED, USB)</li>
+                    <li>• Connect AIO pump and radiator fans</li>
+                    <li>• Route cables neatly in the second chamber</li>
+                    <li>• Double-check everything before powering on</li>
+                </ul>
+            </div>
+
+        </div>
+
+        <div class="mt-12 text-center text-sm text-zinc-500">
+            Take your time. Rushing causes most mistakes.<br>
+            When in doubt, refer to the manuals or ask here.
+        </div>
+
+    </div>
+
+    <script>
+        mermaid.initialize({ startOnLoad: true });
+    </script>
+</body>
+</html>
