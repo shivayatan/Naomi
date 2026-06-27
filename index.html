@@ -21,6 +21,26 @@
         .flashcard-back {
             transform: rotateY(180deg);
         }
+        .motherboard-diagram {
+            background: #27272a;
+            border: 2px solid #3f3f46;
+            border-radius: 12px;
+            position: relative;
+            width: 100%;
+            max-width: 320px;
+            margin: 0 auto;
+            aspect-ratio: 1.3;
+        }
+        .component {
+            position: absolute;
+            font-size: 10px;
+            padding: 2px 6px;
+            border-radius: 4px;
+            background: #3f3f46;
+            color: #e4e4e7;
+            border: 1px solid #52525b;
+            white-space: nowrap;
+        }
     </style>
 </head>
 <body class="bg-zinc-950 text-zinc-200">
@@ -108,7 +128,7 @@
 
             <!-- Flashcard 2: Motherboard Components -->
             <div onclick="this.classList.toggle('flipped')" 
-                 class="flashcard bg-zinc-900 border border-zinc-800 rounded-3xl p-8 h-[420px] flex flex-col cursor-pointer">
+                 class="flashcard bg-zinc-900 border border-zinc-800 rounded-3xl p-8 h-auto min-h-[480px] flex flex-col cursor-pointer">
                 
                 <div class="flashcard-front flex-1 flex flex-col">
                     <div class="flex items-center gap-x-3 mb-6">
@@ -130,39 +150,69 @@
                     </div>
                 </div>
 
-                <div class="flashcard-back flex-1 flex flex-col overflow-auto">
-                    <div class="mb-3">
+                <div class="flashcard-back flex-1 flex flex-col">
+                    <div class="mb-4">
                         <span class="text-xs tracking-[2px] text-emerald-400 font-medium">KEY COMPONENTS</span>
                     </div>
                     
-                    <div class="space-y-4 text-sm">
+                    <!-- Simple Motherboard Diagram -->
+                    <div class="mb-4">
+                        <div class="motherboard-diagram mx-auto relative" style="max-width: 300px; height: 200px; background: #27272a; border: 2px solid #3f3f46; border-radius: 8px;">
+                            
+                            <!-- CPU Socket -->
+                            <div class="absolute top-[25px] left-[50%] -translate-x-1/2 px-3 py-1 bg-orange-500/20 text-orange-400 text-[10px] rounded border border-orange-500/30">
+                                CPU Socket (AM5)
+                            </div>
+                            
+                            <!-- VRM -->
+                            <div class="absolute top-[10px] left-[15px] px-2 py-0.5 bg-red-500/20 text-red-400 text-[9px] rounded">
+                                VRM
+                            </div>
+                            
+                            <!-- RAM Slots -->
+                            <div class="absolute top-[70px] right-[15px] px-2 py-0.5 bg-emerald-500/20 text-emerald-400 text-[9px] rounded">
+                                RAM Slots
+                            </div>
+                            
+                            <!-- M.2 Slots -->
+                            <div class="absolute bottom-[50px] left-[20px] px-2 py-0.5 bg-blue-500/20 text-blue-400 text-[9px] rounded">
+                                M.2 (PCIe 5.0)
+                            </div>
+                            
+                            <!-- PCIe Slot -->
+                            <div class="absolute bottom-[20px] left-[50%] -translate-x-1/2 px-2 py-0.5 bg-violet-500/20 text-violet-400 text-[9px] rounded">
+                                PCIe 5.0 x16
+                            </div>
+                            
+                            <!-- Chipset -->
+                            <div class="absolute bottom-[10px] right-[15px] px-2 py-0.5 bg-amber-500/20 text-amber-400 text-[9px] rounded">
+                                Chipset
+                            </div>
+                            
+                        </div>
+                        <p class="text-center text-[10px] text-zinc-500 mt-1">Simplified top-down view of Mini-ITX board</p>
+                    </div>
+
+                    <div class="space-y-3 text-sm">
                         <div>
-                            <span class="font-semibold text-purple-400">CPU Socket</span>
-                            <p class="text-zinc-300 text-xs mt-0.5">Where the processor is installed. Your board uses AM5 socket for Ryzen 9000 series.</p>
+                            <span class="font-semibold text-purple-400">CPU Socket (AM5)</span>
+                            <p class="text-zinc-300 text-xs mt-0.5">Where the Ryzen 7 9800X3D is installed.</p>
                         </div>
                         <div>
-                            <span class="font-semibold text-purple-400">VRM (Voltage Regulator Module)</span>
-                            <p class="text-zinc-300 text-xs mt-0.5">Delivers stable power to the CPU. Higher quality = better overclocking and stability.</p>
+                            <span class="font-semibold text-purple-400">VRM</span>
+                            <p class="text-zinc-300 text-xs mt-0.5">Delivers clean power to the CPU. Better VRMs = more stable performance.</p>
                         </div>
                         <div>
-                            <span class="font-semibold text-purple-400">RAM Slots (DIMM)</span>
-                            <p class="text-zinc-300 text-xs mt-0.5">Where memory modules are installed. Your board has 2 slots (Mini-ITX limitation).</p>
+                            <span class="font-semibold text-purple-400">RAM Slots</span>
+                            <p class="text-zinc-300 text-xs mt-0.5">2 slots on Mini-ITX boards. Supports fast DDR5 memory.</p>
                         </div>
                         <div>
                             <span class="font-semibold text-purple-400">M.2 Slots</span>
-                            <p class="text-zinc-300 text-xs mt-0.5">For NVMe SSDs. Your B850I supports fast PCIe 5.0 storage.</p>
+                            <p class="text-zinc-300 text-xs mt-0.5">High-speed storage slots. Your board supports PCIe 5.0 SSDs.</p>
                         </div>
                         <div>
                             <span class="font-semibold text-purple-400">PCIe Slot</span>
-                            <p class="text-zinc-300 text-xs mt-0.5">For the graphics card. Your board has one PCIe 5.0 x16 slot.</p>
-                        </div>
-                        <div>
-                            <span class="font-semibold text-purple-400">Chipset</span>
-                            <p class="text-zinc-300 text-xs mt-0.5">Controls communication between components. Yours uses the B850 chipset.</p>
-                        </div>
-                        <div>
-                            <span class="font-semibold text-purple-400">I/O Shield & Rear Ports</span>
-                            <p class="text-zinc-300 text-xs mt-0.5">Includes USB, HDMI, LAN, WiFi antenna connectors, and audio ports.</p>
+                            <p class="text-zinc-300 text-xs mt-0.5">For your RTX 5080. Runs at full PCIe 5.0 x16 speed.</p>
                         </div>
                     </div>
                 </div>
